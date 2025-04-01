@@ -1,13 +1,22 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import React from "react";
+import { WizlyLayout } from "@/components/wizly/WizlyLayout";
+import { ExpertiseForm } from "@/components/wizly/ExpertiseForm";
 
 const Index = () => {
+  // These functions would typically navigate to different steps
+  // or handle form submission in a real application
+  const handleBack = () => {
+    console.log("Navigate back to previous step");
+  };
+
+  const handleContinue = () => {
+    console.log("Navigate to next step");
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <WizlyLayout currentStep={4} totalSteps={5}>
+      <ExpertiseForm onBack={handleBack} onContinue={handleContinue} />
+    </WizlyLayout>
   );
 };
 
